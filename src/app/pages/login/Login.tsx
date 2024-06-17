@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 export const Login = () => {
 
@@ -9,17 +9,25 @@ export const Login = () => {
     alert(email);
   }
 
+  
   useEffect(()=>{
     alert('componente inicializou');
   },[]);
-
+  
   useEffect(()=>{
     console.log(email);
   },[email]);
 
+
+  const mailLength = useMemo(()=>{
+    return Math.random();
+  },[email])
+  
+
   return (
     <div>
       <form>
+        <p>qtd de caracterres : {mailLength}</p>
         <label>
           <span>e-mail</span>
           <input value={email} onChange={ e => setEmail(e.target.value)}/>
