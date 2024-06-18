@@ -1,13 +1,14 @@
-import { useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 
 export const Login = () => {
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleEntrar = () =>{
-    alert(email);
-  }
+  const handleEntrar = useCallback(() =>{
+    console.log(email);
+    console.log(password);
+  },[email,password]);
 
   
   useEffect(()=>{
@@ -24,6 +25,8 @@ export const Login = () => {
   },[])
 
   //const mailLength =  Math.random();
+
+
   
 
   return (
