@@ -44,6 +44,7 @@ export const Login = () => {
           label="Senha"
           type="password"
           value={password}
+          ref={inputPassword}
           onChange={(novoValor) => setPassword(novoValor)}
         />
         <button type="button" onClick={handleEntrar}>
