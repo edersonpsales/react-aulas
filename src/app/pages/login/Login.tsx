@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { InputLogin } from "./components/InputLogin";
+import { ButtonLoging } from "./components/ButtonLogin";
 
 export const Login = () => {
   const [email, setEmail] = useState("");
@@ -50,6 +51,7 @@ export const Login = () => {
         <button type="button" onClick={handleEntrar}>
           Entrar
         </button>
+        <ButtonLoging type="button" onClick={handleEntrar}>Cadastrar</ButtonLoging>
       </form>
       <span>{email}</span>
     </div>
